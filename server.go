@@ -3,10 +3,11 @@ package main
 import (
 	"github.com/IBM/go-gin-app/routers"
 	// "goginapp/plugins" if you create your own plugins import them here
+	"os"
+
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	log "github.com/sirupsen/logrus"
-	"os"
 )
 
 func port() string {
@@ -40,7 +41,7 @@ func main() {
 	// Health endpoint
 	router.GET("/health", routers.HealthGET)
 
-	log.Info("Starting Server on port " + port())
+	log.Info("**Starting Server on port " + port())
 
 	router.Run(port())
 }
